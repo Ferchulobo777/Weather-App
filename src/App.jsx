@@ -87,14 +87,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-200 flex justify-center relative xl:ml-96 2xl:mx-96 lg:ml-96 md:ml-60 sm:mx-12 min-[400px]:mx-12">
+    <div className="min-h-screen bg-gray-200 flex justify-center relative xl:ml-96 2xl:mx-96 lg:ml-96 md:ml-60 sm:mx-12 min-[400px]:mx-12 min-[380px]:mx-8">
     <video autoPlay loop muted className="fixed inset-0 w-full h-full z-0 object-cover">
       <source src={nubes} type="video/mp4" />
     </video>
     <div className="container mx-auto pt-4 relative z-10">
       <form onSubmit={handleSearch} className="mb-4 relative xl:ml-24 2xl:ml-36 lg:ml-20 md:mr-8 sm:ml-32 ">
         <input type="text" classname=' ' name="search" placeholder="Buscar una ciudad" className="rounded-l-lg py-2 px-4 border-t mr-0 border-b border-l text-gray-900 border-gray-200 bg-white" />
-        <button type="submit" className="px-4 bg-blue-500 h-10 md:w-30 text-white font-semibold rounded-r-lg border border-blue-500 hover:bg-blue-700">
+        <button type="submit" className="px-4 bg-blue-500 h-10 md:w-30 text-white font-semibold rounded-r-lg border border-blue-500 hover:bg-blue-700 hover:transform hover:scale-125">
           Buscar
         </button>
       </form>
@@ -112,12 +112,12 @@ function App() {
               <p className="text-4xl font-semibold mt-2 ">
                 {weatherData.temperature}°{weatherData.unit}
               </p>
-              <button onClick={toggleTemperatureUnit} className="text-sm font-medium underline">
+              <button onClick={toggleTemperatureUnit} className="text-sm font-medium min-[380px]:ml-8 hover:transform hover:scale-125 text-lg font-bold bg-blue-500 hover:bg-blue-700 text-white rounded-lg w-28 h-10 mt-2 mr-4">
                 Switch °{weatherData.unit}
               </button>
             </div>
           </div>
-          <button onClick={handleAddToList} className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg border border-blue-500 hover:bg-blue-700 font-bold focus:bg-blue-700 sm:ml-44 min-[400px]:ml-16 xl:ml-32">
+          <button onClick={handleAddToList} className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg border border-blue-500 hover:bg-blue-700 font-bold focus:bg-blue-700 sm:ml-44 min-[400px]:ml-16 xl:ml-32 min-[380px]:ml-16 hover:transform hover:scale-125">
             Agregar a la lista
           </button>
         </div>
