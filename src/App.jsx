@@ -87,14 +87,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-200 flex justify-center relative xl:ml-96 2xl:mx-96 lg:ml-96 md:ml-60 sm:mx-12 min-[400px]:mx-12 min-[380px]:mx-8">
+    <div className="min-h-screen bg-gray-200 flex justify-center relative xl:ml-96 2xl:mx-96 lg:ml-96 md:ml-60 sm:mx-12 min-[400px]:mx-12 min-[380px]:mx-8 md:w-full md:relative md:right-10">
     <video autoPlay loop muted className="fixed inset-0 w-full h-full z-0 object-cover">
       <source src={nubes} type="video/mp4" />
     </video>
     <div className="container mx-auto pt-4 relative z-10">
       <form onSubmit={handleSearch} className="mb-4 relative xl:ml-24 2xl:ml-36 lg:ml-20 md:mr-8 sm:ml-32 ">
-        <input type="text" classname=' ' name="search" placeholder="Buscar una ciudad" className="rounded-l-lg py-2 px-4 border-t mr-0 border-b border-l text-gray-900 border-gray-200 bg-white min-[380px]:w-3/5" />
-        <button type="submit" className="px-4 bg-blue-500 h-10 md:w-30 text-white font-semibold rounded-r-lg border border-blue-500 hover:bg-blue-700 hover:transform hover:scale-125 min min-[380px]:w-1/3">
+        <input type="text" classname=' ' name="search" placeholder="Buscar una ciudad" className="rounded-l-lg py-2 px-4 border-t mr-0 border-b border-l text-gray-900 border-gray-200 bg-white xl:w-2/5 min-[380px]:w-3/5 xl:relative xl:right-24 sm:relative sm:right-32 sm:w-4/5 md:w-2/5 lg:w-2/6 lg:relative lg:right-16" />
+        <button type="submit" className="px-4 bg-blue-500 h-10 md:w-30 text-white font-semibold rounded-r-lg border border-blue-500 hover:bg-blue-700 hover:transform hover:scale-125 min min-[380px]:w-1/3 xl:w-1/6 xl:relative xl:right-24 sm:w-1/5 sm:relative sm:right-32 lg:w-2/12 lg:relative lg:right-16">
           Buscar
         </button>
       </form>
@@ -117,7 +117,7 @@ function App() {
               </button>
             </div>
           </div>
-          <button onClick={handleAddToList} className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg border border-blue-500 hover:bg-blue-700 font-bold focus:bg-blue-700 sm:ml-44 min-[400px]:ml-16 xl:ml-32 min-[380px]:ml-16 hover:transform hover:scale-125">
+          <button onClick={handleAddToList} className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg border border-blue-500 hover:bg-blue-700 font-bold focus:bg-blue-700 sm:ml-44 min-[400px]:ml-16 xl:ml-32 min-[380px]:ml-16 hover:transform hover:scale-125 md:relative md:right-20 lg:relative lg:right-4 xl:relative xl:right-28">
             Agregar a la lista
           </button>
         </div>
