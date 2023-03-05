@@ -173,12 +173,12 @@ function App() {
               <p className='font-semibold text-green-500'>Vientos: {weatherData.wind_speed} km/h</p>
               <p className='font-semibold text-cyan-400'>Humedad: {weatherData.humidity}%</p>
               <p className='font-semibold text-orange-500'>Sensación térmica: {weatherData.feels_like}°{weatherData.unit}</p>
-              <button onClick={toggleTemperatureUnit} className="text-sm font-medium min-[380px]:ml-8 hover:transform hover:scale-125 text-lg font-bold bg-blue-500 hover:bg-blue-700 text-white rounded-lg w-28 h-10 mt-2 min-[380px]:ml-auto">
+              <button onClick={toggleTemperatureUnit} className="text-sm font-medium min-[380px]:ml-8 hover:transform hover:scale-125 text-lg font-bold bg-blue-500 hover:bg-blue-700 text-white rounded-lg w-28 h-10 mt-2 min-[380px]:relative min-[380px]:left-0 ">
                 Switch °{weatherData.unit}
               </button>
             </div>
           </div>
-          <button onClick={handleAddToList} className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg border border-blue-500 hover:bg-blue-700 font-bold focus:bg-blue-700 sm:ml-44 min-[400px]:ml-16 xl:ml-32 min-[380px]:ml-16 hover:transform hover:scale-125 md:relative md:right-20 lg:relative lg:right-4 xl:relative xl:right-28">
+          <button onClick={handleAddToList} className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg border border-blue-500 hover:bg-blue-700 font-bold focus:bg-blue-700 sm:ml-44 min-[400px]:ml-16 xl:ml-32 min-[380px]:ml-16 hover:transform hover:scale-125 md:relative md:right-20 lg:relative lg:right-4 xl:relative xl:right-28 min-[380px]:relative min-[380px]:right-1">
             Agregar a la lista
           </button>
         </div>
