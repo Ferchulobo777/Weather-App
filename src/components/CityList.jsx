@@ -11,7 +11,7 @@ function CityList({ cityList, onDeleteCity }) {
             <li key={index} className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm p-4 rounded-md shadow-xl mb-2 flex flex-col md:w-2/4 md:h-1/2">
               <div>
                 <strong>{city.city}, {city.country}</strong>
-                <button className="bg-red-500 bg-opacity-80  w-16 backdrop-filter backdrop-blur-md p-1 rounded-md shadow-md hover:bg-red-600 text-white hover:text-black flex float-right font-bold focus:bg-red-700 hover:transform hover:scale-125" onClick={() => onDeleteCity(index)}>Borrar</button>
+                <button className="bg-red-500 bg-opacity-80  w-16 backdrop-filter backdrop-blur-md p-1 rounded-md shadow-md hover:bg-red-600 text-white hover:text-black flex float-right font-bold focus:bg-red-700 hover:transform hover:scale-125 min-[380px]:text-center items-center justify-center" onClick={() => onDeleteCity(index)}>Borrar</button>
               </div>
               <div className="flex items-center">
                 <img className="w-10 h-10" src={city.icon} alt={city.description} />
