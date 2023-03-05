@@ -16,7 +16,12 @@ function App() {
     description: '',
     temperature: '',
     unit: 'C',
-  });
+    temp_min: '',
+    temp_max: '',
+    wind_speed: '',
+    humidity: '',
+    feels_like: '',
+});
 
   const [searchTerm, setSearchTerm] = useState('');
   const [cityList, setCityList] = useState([]);
@@ -34,27 +39,7 @@ function App() {
 
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   }, []);
-
-  useEffect(() => {
-    if (location.latitude && location.longitude) {
-      const apiKey = 'a1d9b60b16ca2b74fcd41493f649ab8e';
-      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=${apiKey}&units=metric`;
-
-      if (searchTerm !== '') {
-        url = `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=${apiKey}&units=metric`;
-      }
-
-      axios.get(url).then((response) => {
-        const country = response.data.sys.country;
-        const city = response.data.name;
-        const icon = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`;
-        const description = response.data.weather[0].description;
-        const temperature = response.data.main.temp;
-        setWeatherData({ country, city, icon, description, temperature, unit: 'C' });
-      });
-    }
-  }, [location, searchTerm]);
-
+  
   const toggleTemperatureUnit = () => {
     const newUnit = weatherData.unit === 'C' ? 'F' : 'C';
     let newTemperature;
@@ -74,6 +59,43 @@ function App() {
   const handleSearch = (e) => {
     e.preventDefault();
     setSearchTerm(e.target.elements.search.value);
+  
+    if (location.latitude && location.longitude) {
+      const apiKey = 'a1d9b60b16ca2b74fcd41493f649ab8e';
+      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=${apiKey}&units=metric`;
+  
+      if (searchTerm !== '') {
+        url = `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=${apiKey}&units=metric`;
+      }
+  
+      axios.get(url).then((response) => {
+        const country = response.data.sys.country;
+        console.log(response)
+        const city = response.data.name;
+        const icon = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`;
+        const description = response.data.weather[0].description;
+        const temperature = response.data.main.temp;
+        const temp_min = response.data.main.temp_min;
+        const temp_max = response.data.main.temp_max;
+        const wind_speed = response.data.wind.speed;
+        const humidity = response.data.main.humidity;
+        const feels_like = response.data.main.feels_like;
+  
+        setWeatherData({
+          country,
+          city,
+          icon,
+          description,
+          temperature,
+          unit: 'C',
+          temp_min,
+          temp_max,
+          wind_speed,
+          humidity,
+          feels_like,
+        });
+      });
+    }
   };
 
   const handleAddToList = () => {
@@ -102,16 +124,21 @@ function App() {
         <div className="bg-white bg-opacity-20 w-full md:w-2/4 backdrop-filter backdrop-blur-sm p-4 rounded-md md:p-8">
           <div className="flex flex-col md:flex-row justify-between items-center mb-4">
             <div className="mb-4 md:mb-0">
-              <h2 className="text-3xl md:text-5xl font-semibold">
+              <h2 className="text-3xl md:text-4xl font-extrabold">
                 {weatherData.city}, {weatherData.country}
               </h2>
               <p className="text-lg md:text-xl mt-2 text-black font-bold">{weatherData.description}</p>
             </div>
             <div>
               <img src={weatherData.icon} alt={weatherData.description} className="h-20 md:h-24" />
-              <p className="text-4xl font-semibold mt-2 ">
+              <p className="text-4xl font-extrabold mt-2 ">
                 {weatherData.temperature}°{weatherData.unit}
               </p>
+              <p className='font-semibold'>Mínima: {weatherData.temp_min}°{weatherData.unit}</p>
+              <p className='font-semibold'>Máxima: {weatherData.temp_max}°{weatherData.unit}</p>
+              <p className='font-semibold'>Vientos: {weatherData.wind_speed} km/h</p>
+              <p className='font-semibold'>Humedad: {weatherData.humidity}%</p>
+              <p className='font-semibold'>Sensación térmica: {weatherData.feels_like}°{weatherData.unit}</p>
               <button onClick={toggleTemperatureUnit} className="text-sm font-medium min-[380px]:ml-8 hover:transform hover:scale-125 text-lg font-bold bg-blue-500 hover:bg-blue-700 text-white rounded-lg w-28 h-10 mt-2 min-[380px]:ml-auto">
                 Switch °{weatherData.unit}
               </button>

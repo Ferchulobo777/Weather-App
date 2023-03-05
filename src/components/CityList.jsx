@@ -8,15 +8,15 @@ function CityList({ cityList, onDeleteCity }) {
         <h2 className='w-36 h-10 mt-2 mb-2 bg-blue-500 text-white font-semibold rounded-lg border border-blue-500 hover:bg-blue-700 font-bold focus:bg-blue-700 cursor-pointer flex items-center justify-center xl:ml-40 2xl:ml-60 lg:ml-36 md:ml-16 sm:ml-52 min-[400px]:ml-20 min-[380px]:mx-24 hover:transform hover:scale-125 md:relative md:left-14 xl:relative xl:left-28'>Lista de Ciudades</h2>
         <ul>
           {cityList.map((city, index) => (
-            <li key={index} className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm p-4 rounded-md shadow-xl mb-2 flex flex-col md:w-2/4 md:h-1/2">
+            <li key={index} className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm p-4 rounded-md shadow-xl mb-2 flex flex-col md:w-2/4 md:h-1/2 font-extrabold text-lg">
               <div>
                 <strong>{city.city}, {city.country}</strong>
                 <button className="bg-red-500 bg-opacity-80  w-16 backdrop-filter backdrop-blur-md p-1 rounded-md shadow-md hover:bg-red-600 text-white hover:text-black flex float-right font-bold focus:bg-red-700 hover:transform hover:scale-125 min-[380px]:text-center items-center justify-center" onClick={() => onDeleteCity(index)}>Borrar</button>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center font-extrabold">
                 <img className="w-10 h-10" src={city.icon} alt={city.description} />
-                <span className="ml-4 text-lg text-black font-bold">{city.temperature}&deg;{city.unit}</span>
-                <span className="ml-4 text-lg text-black font-bold">{city.description}</span>
+                <span className="ml-4 text-lg text-black font-extrabold">{city.temperature}&deg;{city.unit}</span>
+                <span className="ml-4 text-lg text-black font-extrabold">{city.description}</span>
               </div>
             </li>
           ))}
