@@ -5,7 +5,7 @@ function CityList({ cityList, onDeleteCity }) {
   return (
     <div className='grid grid-cols-1 grid-rows-2'>
       <div>
-        <h2 className='w-36 h-10 mt-2 mb-2 bg-blue-500 text-white font-semibold rounded-lg border border-blue-500 hover:bg-blue-700 font-bold focus:bg-blue-700 cursor-pointer flex items-center justify-center xl:ml-40 2xl:ml-60 lg:ml-36 md:ml-16 sm:ml-52 min-[400px]:ml-20 min-[380px]:mx-24 hover:transform hover:scale-125 md:relative md:left-14 xl:relative xl:left-28 min-[380px]:relative min-[380px]:right-3'>Lista de Ciudades</h2>
+        <h2 className='w-36 h-10 mt-2 mb-2 font-semibold rounded-lg flex items-center justify-center xl:ml-40 2xl:ml-60 lg:ml-36 md:ml-16 sm:ml-52 min-[400px]:ml-20 min-[380px]:mx-24 md:relative md:left-14 xl:relative xl:left-28 min-[380px]:relative min-[380px]:right-3 bg-white opacity-50 text-black font-black'>Lista de Ciudades</h2>
         <ul>
           {cityList.map((city, index) => (
             <li key={index} className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm p-4 rounded-md shadow-xl mb-2 flex flex-col md:w-2/4 md:h-1/2 font-extrabold text-lg">
