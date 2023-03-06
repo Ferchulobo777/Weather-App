@@ -5,7 +5,7 @@ function CityList({ cityList, onDeleteCity }) {
   return (
     <div className="grid grid-cols-1 grid-rows-2">
       <div>
-        <h2 className="w-36 h-10 mt-2 mb-2 rounded-lg flex items-center justify-center xl:ml-40 2xl:ml-60 lg:ml-36 md:ml-16 sm:ml-52 min-[400px]:ml-20 min-[380px]:mx-24 md:relative md:left-14 xl:relative xl:left-28 min-[380px]:relative min-[380px]:right-3 bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm text-black font-black text-base">
+        <h2 className="w-36 h-10 mt-2 mb-2 rounded-lg flex items-center justify-center xl:ml-40 2xl:ml-60 lg:ml-36 md:ml-16 sm:ml-52 min-[400px]:ml-20 min-[380px]:mx-24 md:relative md:left-14 xl:relative xl:left-28 min-[380px]:relative min-[380px]:right-3 bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm text-slate-800 font-black text-base">
           Lista de Ciudades
         </h2>
         <ul>
