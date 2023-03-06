@@ -149,8 +149,8 @@ function App() {
     </video>
     <div className="container mx-auto pt-4 relative z-10">
       <form onSubmit={handleSearch} className="mb-4 relative xl:ml-24 2xl:ml-36 lg:ml-20 md:mr-8 sm:ml-32 ">
-        <input type="text" classname=' ' name="search" placeholder="Buscar una ciudad" className="rounded-l-lg py-2 px-4 border-t mr-0 border-b border-l text-gray-900 border-gray-200 bg-white xl:w-2/5 min-[380px]:w-3/5 xl:relative xl:right-24 sm:relative sm:right-32 sm:w-4/5 md:w-2/5 lg:w-2/6 lg:relative lg:right-16" />
-        <button type="submit" className="px-4 bg-blue-500 h-10 md:w-30 text-white font-semibold rounded-r-lg border border-blue-500 hover:bg-blue-700 hover:transform hover:scale-125 min min-[380px]:w-1/3 xl:w-1/6 xl:relative xl:right-24 sm:w-1/5 sm:relative sm:right-32 lg:w-2/12 lg:relative lg:right-16">
+        <input type="text" name="search" placeholder="Buscar una ciudad" className=" h-10 rounded-l-lg py-2 px-4 text-slate-900 font-semibold bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm xl:w-2/5 min-[380px]:w-3/5 xl:relative xl:right-24 sm:relative sm:right-32 sm:w-4/5 md:w-2/5 lg:w-2/6 lg:relative lg:right-16 placeholder:font-semibold placeholder:text-slate-300" />
+        <button type="submit" className="px-4 bg-blue-500 h-10 md:w-30 text-white font-black rounded-r-lg border border-blue-500 hover:bg-blue-700 min min-[380px]:w-1/3 xl:w-1/6 xl:relative xl:right-24 sm:w-1/5 sm:relative sm:right-32 lg:w-2/12 lg:relative lg:right-16">
           Buscar
         </button>
       </form>
